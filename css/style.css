@@ -547,3 +547,25 @@ color:#00f7ff;
 transform:translateY(-5px);
 
 }
+
+.page-title{
+
+padding-top:150px;
+text-align:center;
+
+}
+
+.page-title h1{
+
+font-size:60px;
+color:#00f7ff;
+
+}
+
+.page-content{
+
+padding:80px 8%;
+line-height:1.8;
+font-size:18px;
+
+}
