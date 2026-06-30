@@ -112,3 +112,77 @@ el.style.transform="translateY(40px)";
 el.style.transition=".7s";
 
 });
+
+/* PRELOADER */
+
+window.onload=()=>{
+
+document.getElementById("preloader").style.display="none";
+
+};
+
+/* CURSOR */
+
+const cursor=document.querySelector(".cursor-glow");
+
+document.addEventListener("mousemove",(e)=>{
+
+cursor.style.left=e.clientX+"px";
+
+cursor.style.top=e.clientY+"px";
+
+});
+
+/* COUNTERS */
+
+const counters=document.querySelectorAll(".counter");
+
+counters.forEach(counter=>{
+
+const update=()=>{
+
+const target=+counter.dataset.target;
+
+const current=+counter.innerText;
+
+const increment=target/100;
+
+if(current<target){
+
+counter.innerText=Math.ceil(current+increment);
+
+setTimeout(update,20);
+
+}else{
+
+counter.innerText=target;
+
+}
+
+};
+
+update();
+
+});
+
+/* AUTO TESTIMONIAL SLIDER */
+
+let cards=document.querySelectorAll(".testimonial-card");
+
+let index=0;
+
+setInterval(()=>{
+
+cards.forEach(card=>card.style.display="none");
+
+index++;
+
+if(index>cards.length){
+
+index=1;
+
+}
+
+cards[index-1].style.display="block";
+
+},3000);
